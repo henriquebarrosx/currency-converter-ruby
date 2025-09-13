@@ -1,0 +1,45 @@
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+inherit_gem:
+  rubocop-rails:
+    - config/default.yml
+  rubocop-rspec:
+    - config/default.yml
+
+AllCops:
+  TargetRubyVersion: 3.3
+  Exclude:
+    - 'db/schema.rb'
+    - 'bin/**/*'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+
+Layout/LineLength:
+  Max: 120
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Layout/IndentationWidth:
+  Width: 4
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Rails/SkipsModelValidations:
+  Enabled: true
+
+Rails/OutputSafety:
+  Enabled: true
+
+RSpec/ExampleLength:
+  Max: 15
+
+RSpec/MultipleExpectations:
+  Max: 5
